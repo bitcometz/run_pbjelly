@@ -4,6 +4,9 @@ Overview
 Scope and Features
 --------------------------------------------------------------------------------
 
+.. image:: images/pipelines.png
+
+
 run_pbjelly is intended to be easy to use but some
 familiarity with commandline applications is expected. Rather than providing a
 flexible solution to a number of common workflows, we have designed pRESTO to

@@ -1,7 +1,5 @@
-run_pbjelly - a faster pbjelly ^-^
+run_pbjelly - a faster pbjelly
 ================================================================================
-
-.. image:: images/pipelines.png
 
 
 run_pbjelly is a toolkit to do the gapcloser with PacBio or ONT long reads. Basically, it is the same as the published PBJelly. The main difference between them is that run_pbjelly firstly filtered out reads that are determined to have little relationship with the gap region by MECAT. It has been reported that MECAT is 10 more times faster than Blasr which is employed by the PBJelly.
