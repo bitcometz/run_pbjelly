@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &mdash; run_pbjelly 1.01 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="run_pbjelly 1.01 documentation" href="index.html" />
+    <link rel="next" title="Download" href="install.html" />
+    <link rel="prev" title="run_pbjelly - a faster pbjelly ^-^" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="scope-and-features">
+<h2>Scope and Features<a class="headerlink" href="#scope-and-features" title="Permalink to this headline">¶</a></h2>
+<p>run_pbjelly is intended to be easy to use but some
+familiarity with commandline applications is expected. Rather than providing a
+flexible solution to a number of common workflows, we have designed pRESTO to
+be as fixed as possible, which can help you easily get the results with worrying about installing the other software and setting up path for these program. This design help you save a lot of time, but we suggest you should read the published PBJelly paper and related documents incase you have to do some specific test when the results do not meet the contract indicator.</p>
+<p>run_pbjelly is composed of a set of standalone tools to perform specific tasks. A brief description of each tool is shown in the table below.</p>
+<table border="1" class="docutils" id="featuretable">
+<colgroup>
+<col width="15%" />
+<col width="10%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tool</th>
+<th class="head">Subcommand</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="xref std std-ref">Python script</span></td>
+<td>&nbsp;</td>
+<td>a set of short program designed to complete various data format conversion and process</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>filt4seq_v2.0.py</td>
+<td>filter reads with length longer than 100kbp or less than 3kbp</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>find_gap_v1.0.py</td>
+<td>output gap position(<a href="#id1"><span class="problematic" id="id2">*</span></a>.bed) information for the scaffolds</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>m4_to_bed_v3.pl</td>
+<td>Convert the MECAT alignment <a href="#id3"><span class="problematic" id="id4">*</span></a>.m4 to the format <a href="#id5"><span class="problematic" id="id6">*</span></a>.bed</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>pick_reads_in_raw.pl</td>
+<td>picked raw reads according to the id list</td>
+</tr>
+<tr class="row-odd"><td><span class="xref std std-ref">PBJelly</span></td>
+<td>&nbsp;</td>
+<td>aligns long reads to high-confidence draft assembles and filled captured gaps</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>setup</td>
+<td>Tag sequence names, find gaps, and index the reference</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>mapping</td>
+<td>Use blasr to map the sequences to the reference</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>support</td>
+<td>Indentify which reads support with gaps</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>extraction</td>
+<td>For each gap, consolidate all reads supporting it into a local-assembly folder</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>assembly</td>
+<td>Build the consensus gap-filling sequence</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>output</td>
+<td>Stitch the reference sequences and gap-filling sequence together</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="input-and-output">
+<span id="inputoutput"></span><h2>Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h2>
+<p>For run_pbjelly, you have to prepared two files, the first one is the reference file name with fasta as end. The second file is &#8216;reads.list&#8217; file where each line stores the path for the reads files independently. After these, you have to prepare a &#8216;config.cfg&#8217; file, containing reference file path, reads.list, output dir and all kinds of parameters.</p>
+</div>
+<div class="section" id="parameters">
+<span id="id7"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>There are mainly five steps in run_pbjelly, and all the important parameters were saved in following the config.cfg file. The parameters are shown as followed:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="10%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Category</th>
+<th class="head">Sub-category</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="xref std std-ref">Data</span></td>
+<td>&nbsp;</td>
+<td>set up names or dir for files</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>sample</td>
+<td>the project name</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>reads_list</td>
+<td>abs path for the file reads.list containg path for reads set</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>output_dir</td>
+<td>dir where you want to ouput all the results</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>ref</td>
+<td>the scaffolds file you want to do the gapcloser with</td>
+</tr>
+<tr class="row-odd"><td><span class="xref std std-ref">Program</span></td>
+<td>&nbsp;</td>
+<td>set up parameters for all knids of programs</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>mask_len</td>
+<td>the gap length for the 1bp gap to extend</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>best</td>
+<td>the number for MECAT to output best alignments</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>reads_len_max</td>
+<td>the max length for raw reads</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>reads_len_min</td>
+<td>the min length for raw reads</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#scope-and-features">Scope and Features</a></li>
+<li><a class="reference internal" href="#input-and-output">Input and Output</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">run_pbjelly - a faster pbjelly ^-^</a></li>
+      <li>Next: <a href="install.html" title="next chapter">Download</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/overview.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Liji.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/overview.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

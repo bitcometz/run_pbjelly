@@ -1,0 +1,14 @@
+Tool	Subcommand	Description
+:ref:`Python script`		a set of short program designed to complete various data format conversion and process
+	filt4seq_v2.0.py	filter reads with length longer than 100kbp or less than 3kbp
+	find_gap_v1.0.py	output gap position(*.bed) information for the scaffolds
+	m4_to_bed_v3.pl	Convert the MECAT alignment *.m4 to the format *.bed
+	pick_reads_in_raw.pl	picked raw reads according to the id list
+:ref:`PBJelly`		aligns long reads to high-confidence draft assembles and filled captured gaps
+	setup	Tag sequence names, find gaps, and index the reference
+	mapping	Use blasr to map the sequences to the reference
+	support	Indentify which reads support with gaps
+	extraction	For each gap, consolidate all reads supporting it into a local-assembly folder
+	assembly	Build the consensus gap-filling sequence
+	output	Stitch the reference sequences and gap-filling sequence together
+

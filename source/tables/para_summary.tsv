@@ -1,0 +1,12 @@
+Category	Sub-category	Description
+:ref:`Data`		set up names or dir for files
+	sample	the project name
+	reads_list	abs path for the file reads.list containg path for reads set
+	output_dir	dir where you want to ouput all the results
+	ref	the scaffolds file you want to do the gapcloser with
+:ref:`Program`		set up parameters for all knids of programs
+	mask_len	the gap length for the 1bp gap to extend
+	best	the number for MECAT to output best alignments
+	reads_len_max	the max length for raw reads
+	reads_len_min	the min length for raw reads
+
