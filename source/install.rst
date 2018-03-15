@@ -1,16 +1,17 @@
-.. _Download:
-
-Download
-================================================================================
-
-The latest stable release of pRESTO may be downloaded from
-`PyPI <https://pypi.python.org/pypi/presto>`__ or
-`Bitbucket <https://bitbucket.org/kleinstein/presto/downloads>`__.
-
-Development versions and source code are available on
-`Bitbucket <https://bitbucket.org/kleinstein/presto/overview>`__.
-
 .. _Installation:
 
-Install
+Installation
 ================================================================================
+
+It is easy to install the run_pbjelly, you just have to unzip or copy the 'bin' to you path. But you have to assign the perl, python and blasr in you own .bashrc file, the following is an example:
+
+export PATH=/NJPROJ1/PAG/Animal/software/Perl-5.18.2/bin/:$PATH (for perl)
+
+export PATH=/NJPROJ1/RAD/software/anaconda2/bin: (for python)
+
+export PATH=/NJPROJ1/RAD/users/zhouyiqi/pacbio/pbjelly_new/software/:$PATH (for blasr)
+
+export PERL5LIB='/NJPROJ1/PAG/Animal/software/Perl-5.18.2/lib/perl5/site_perl/5.18.2/x86_64-linux-thread-multi:/NJPROJ1/PAG/Animal/software/Perl-5.18.2/lib/perl5/site_perl/5.18.2:/NJPROJ1/PAG/Animal/software/Perl-5.18.2/lib/perl5/5.18.2/x86_64-linux-thread-multi:/NJPROJ1/PAG/Animal/software/Perl-5.18.2/lib/perl5/5.18.2' (for perl lib)
+
+
+
