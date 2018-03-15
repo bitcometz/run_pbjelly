@@ -14,28 +14,51 @@
 
 import sys
 import os
+import sphinx_rtd_theme
+from unittest.mock import MagicMock
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 
+# Mock modules for readthedocs
+if os.environ.get('READTHEDOCS', None) == 'True':
+    class Mock(MagicMock):
+        @classmethod
+        def __getattr__(cls, name):  return MagicMock()
+
+    mock_modules = ['numpy', 'scipy', 'scipy.stats', 'pandas',
+                    'Bio', 'Bio.Align', 'Bio.Alphabet', 'Bio.Seq', 'Bio.SeqRecord']
+    sys.modules.update((mod_name, Mock()) for mod_name in mock_modules)
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#sys.path.insert(0, os.path.abspath('.'))
+script_path = os.path.abspath(os.path.join(os.path.dirname(__name__), os.pardir, 'bin'))
+sys.path.append(script_path)
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#needs_sphinx = '1.0'
+needs_sphinx = '1.4'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['sphinx.ext.autodoc',
+              'sphinx.ext.imgmath',
+              'sphinx.ext.intersphinx',
+              'sphinx.ext.todo',
+              'sphinx.ext.coverage',
+              'sphinxcontrib.napoleon',
+              'sphinxcontrib.autoprogram']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-# source_suffix = ['.rst', '.md']
+# The suffix of source filenames.
 source_suffix = '.rst'
 
 # The encoding of source files.
@@ -45,10 +68,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'run_pbjelly'
-copyright = u'2018, Liji'
-author = u'Liji'
-
+project = 'run_pbjelly'
+copyright = '2016, liji from novogene'
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
@@ -73,7 +94,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -100,7 +121,7 @@ pygments_style = 'sphinx'
 #keep_warnings = False
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+todo_include_todos = True
 
 
 # -- Options for HTML output ----------------------------------------------
@@ -115,7 +136,7 @@ html_theme = 'sphinx_rtd_theme'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -281,3 +302,6 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+intersphinx_mapping = {'http://docs.python.org/': None}
+
