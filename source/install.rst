@@ -3,7 +3,7 @@
 Installation
 ================================================================================
 
-It is easy to install the run_pbjelly, you just have to unzip or copy the 'bin' to you path. But you have to assign the perl, python and blasr in you own .bashrc file, the following is an example:
+It is easy to install the run_pbjelly, you just have to unzip or copy the 'bin' to you path. But you have to assign the path for the perl, python and blasr in you own .bashrc file, the following is an example:
 
 export PATH=/NJPROJ1/PAG/Animal/software/Perl-5.18.2/bin/:$PATH (for perl)
 
