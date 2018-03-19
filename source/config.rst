@@ -13,10 +13,19 @@ First, you have to prepare a 'config.cfg', which contains the informations run_p
 
 .. image:: images/config.png
 
+An example of the config.cfg was stored in the cluster:
+
+   > /NJPROJ1/RAD/users/zhangjinbo/01.pipeline/00.PBjelly/00.liji/01.test_shanli/config.cfg
+
+
 
 Here, in the config.cfg, the reads.list store all the paths for the long reads files, for example:
 
 .. image:: images/reads.list.png
+
+
+For more information about the parameters in config.cfg, you can refer to the part *Parameters* 
+under the section *Overview*.
 
 
 .. _Usage:
