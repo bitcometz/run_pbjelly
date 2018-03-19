@@ -19,5 +19,6 @@ Besides, for the detailed process information for each gap, you can refer the fi
 Reports
 --------------------------------------------------------------------------------
 
-We also generated a html report for run_pbjelly, which include contig N50 value, distribution of gap lengths, and et al. And the report files were placed under the file folder '3-reports'. (Coming soon!)
+We also generated a html report for run_pbjelly, which include contig N50 value, distribution of gap lengths, and et al. And the report files were placed under the file folder '3-reports' (comming soon). A simple statistics were generated under the file folder '3-reports', such as:
 
+.. image:: images/stat.png
