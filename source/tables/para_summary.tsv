@@ -9,4 +9,6 @@ Category	Sub-category	Description
 	best	the number for MECAT to output best alignments
 	reads_len_max	the max length for raw reads
 	reads_len_min	the min length for raw reads
-
+	mecat_n	number of of candidates for gap extension
+	mecat_b	output the best b alignments
+	blasr_nproc	Align using N processes
