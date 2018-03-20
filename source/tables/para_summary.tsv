@@ -11,4 +11,8 @@ Category	Sub-category	Description
 	reads_len_min	the min length for raw reads
 	mecat_n	number of of candidates for gap extension
 	mecat_b	output the best b alignments
+	mecat_mem	memory set for mecat alignment
+	mecat_nproc	cpu number set for mecat alignment
+	blasr_mem	memory set for blasr alignment
 	blasr_nproc	Align using N processes
+	assembly_nproc	cpu number set for PBJelly assembly

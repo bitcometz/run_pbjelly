@@ -6,3 +6,10 @@ run_pbjelly is a toolkit to do the gapcloser with PacBio or ONT long reads. Basi
 
 Another bright spot in our pipeline is that you can just finish all the tasks by running a single job whereas you have to manually deliver the task each time and you also need to check that each task has been completed with the original PBJelly pipeline.
 
+And its performance on ~600M genome comparing to the original PBJelly:
+
+.. csv-table::
+   :file: tables/performance.tsv
+   :delim: tab
+   :header-rows: 1
+   :widths: 15, 10, 75

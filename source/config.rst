@@ -37,7 +37,7 @@ It is very easy to use run_pbjelly, just as the following commands:
 
    > /NJPROJ1/RAD/software/anaconda2/bin/python  ../00.bin/run_pbjelly.py  config.cfg
 
-During this, it will generate all the dirs and shells for you, and it will also output the next action for you :
+During this, it will generate all the dirs and shells for you, and it will also output the next action for you , for example:
 
    Please paste the following command line and Enter:
 

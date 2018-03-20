@@ -1,0 +1,6 @@
+Folder	Storage	Description
+0-shells	1.8M	Store all the shells
+1-data	61G	Store the filted fasta file and as input for mecat
+2-results	9.9G	Store the mecat results, picked fastq file and PBJelly results
+3-reports	5.5K	Store reports for run_pbjelly (just a txt file now)
+4-logs	340G	Store log file for run_pbjelly and tmp file for mecat alignement(Count for the vast majority)
