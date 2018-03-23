@@ -12,6 +12,7 @@ Another bright spot in our pipeline is that you can just finish all the tasks by
     <font color="red">Performance </font> of run_pbjelly on ~600M genome comparing to the original PBJelly as the tables, 
 run_pbjelly achieve **better** results but **~10 times faster** !!! Because in this case, only **~93%** of the reads were first filtered by mecat.
 
+.. _FeatureTable:
 
 .. csv-table::
    :file: tables/performance.tsv
@@ -19,11 +20,13 @@ run_pbjelly achieve **better** results but **~10 times faster** !!! Because in t
    :header-rows: 1
    :widths: 15, 10, 75
 
-Another tested on also ~731M genome with 100x PacBio data based on the same 20 cpu
+Another tested on also ~731M genome with 100x PacBio data based on the same 20 cpu:
+
+.. _FeatureTable:
 
 .. csv-table::
    :file: tables/performance2.tsv
    :delim: tab
    :header-rows: 1
-   :widths: 15, 10, 75
+   :widths: 15, 30, 30, 30
  

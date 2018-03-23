@@ -1,3 +1,3 @@
-Tool	Start time	End time	Contig N50(kbp)
+Tool	Start	End	ContigN50
 PBJelly	15:20:00	21:23:31	768,781
 **run_pbjelly**	Computing	Computing	Computing
