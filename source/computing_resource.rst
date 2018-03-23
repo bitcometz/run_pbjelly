@@ -17,7 +17,7 @@ You can easily change these settings in the config.cfg file.
 Storage
 --------------------------------------------------------------------------------
 
-For a genome ~600Mb size with 50x PacBio, the storage for each folder is:
+For a genome ~600Mb size with 100x PacBio, the storage for each folder is:
 
 .. csv-table::
    :file: tables/storage.tsv
