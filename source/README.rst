@@ -28,5 +28,5 @@ Another tested on also ~731M genome with 100x PacBio data based on the same 20 c
    :file: tables/performance2.tsv
    :delim: tab
    :header-rows: 1
-   :widths: 15, 30, 30, 30
+   :widths: 15, 10, 75
  

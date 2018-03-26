@@ -1,3 +1,5 @@
-Tool	Start	End	ContigN50
-PBJelly	15:20:00	21:23:31	768,781
-**run_pbjelly**	Computing	Computing	Computing
+Tool	Contig N50 (kbp)	Cpu hour
+original scaffolds	598	NA
+PBJelly	796	5,367 (blasr alignment)
+**run_pbjelly**	794	**92 (mecat alignment) + 858 (blasr alignment)**
+**runpbjelly(zhouyiqi)**	Computing	Computing

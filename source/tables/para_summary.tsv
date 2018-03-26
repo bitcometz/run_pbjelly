@@ -16,3 +16,5 @@ Category	Sub-category	Description
 	blasr_mem	memory set for blasr alignment
 	blasr_nproc	Align using N processes
 	assembly_nproc	cpu number set for PBJelly assembly
+	qsub_q	specify the queue to use
+
