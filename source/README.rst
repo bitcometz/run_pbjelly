@@ -10,7 +10,7 @@ Another bright spot in our pipeline is that you can just finish all the tasks by
 .. raw:: html 
    
     <font color="red">Performance </font> of run_pbjelly on ~600M genome comparing to the original PBJelly as the tables, 
-run_pbjelly achieve **better** results but **~10 times faster** !!! Because in this case, only **~93%** of the reads were first filtered by mecat.
+run_pbjelly achieve **similar or better** results but **~10 times faster** !!! Because in this case, only **~93%** of the reads were first filtered by mecat.
 
 .. _FeatureTable:
 
