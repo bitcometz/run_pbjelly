@@ -7,6 +7,7 @@ Download
 The paht for the run_pbjelly in our cluster:
 
 Nanjing:
+
    > /NJPROJ1/RAD/users/zhangjinbo/01.pipeline/00.PBjelly/00.liji/00.bin
 
 Aliyun:
