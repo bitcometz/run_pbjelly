@@ -1,5 +1,6 @@
 Tool	Contig N50 (kbp)	Cpu hour
 original scaffolds	2,882	NA
 PBJelly	3,363	1,112 (blasr alignment)
-**run_pbjelly**	3,494	**66 (mecat alignment) + 92 (blasr alignment)**
+mecat	2,912	46
+**run_pbjelly**	3,494	**46 (mecat alignment) + 92 (blasr alignment)**
 **runjelly(zhouyiqi)**	3,467	**3 (minimap2 alignment) + 150 (blasr alignment)**
