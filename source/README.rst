@@ -6,6 +6,8 @@ run_pbjelly is a toolkit to do the gapcloser with PacBio or ONT long reads. Basi
 
 Another bright spot in our pipeline is that you can just finish all the tasks by running a single job whereas you have to manually deliver the task each time and you also need to check that each task has been completed with the original PBJelly pipeline. And we also replaced the blasr1.3 with blarsr5.3 in PBJelly.
 
+对于runjelly, 采取Minimap2替换的版本, 可以下其中文文档 `Chinese document <https://github.com/bitcometz/run_pbjelly/raw/master/source/runjelly_v.1.3.1_document.docx>`__
+
 
 .. raw:: html 
    

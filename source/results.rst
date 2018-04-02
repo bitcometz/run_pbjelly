@@ -1,6 +1,19 @@
 Results
 ================================================================================
 
+folders
+--------------------------------------------------------------------------------
+
+Basically, there are 4 folders, including **0-shells**, **1-data**, **2-results**, **3-reports**, and **4-logs**.
+Their introduction is as following tables(same as the table in **Storage** section, 600 genome with 100x data):
+
+.. csv-table::
+   :file: tables/storage.tsv
+   :delim: tab
+   :header-rows: 1
+   :widths: 15, 10, 75
+
+
 Scaffold file
 --------------------------------------------------------------------------------
 
